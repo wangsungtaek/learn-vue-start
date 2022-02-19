@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:id="uuid">asdf</p>
+        <p v-bind:class="name">class바인드</p>
+        <p>{{ num }}</p>
+        <p>{{ doubleNum }}</p>
+        <div v-if="loading">Loading...</div>
+        <div v-else>test</div>
+        <div v-show="loading">Loading</div>
+        
+        <input type="text" v-model="inputData">
+        <p>{{ inputData }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 20,
+                uuid: "asd1234",
+                name: "text-blue",
+                loading: true,
+                inputData: ''
+            },
+            computed: {
+                doubleNum() {
+                    return this.num * 2;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
